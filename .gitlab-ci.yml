@@ -12,6 +12,13 @@ stages:
 
 # Run our tests
 # If Xdebug was installed you can generate a coverage report and see code coverage metrics.
+build:
+  stage: build
+  script:
+  - docker build -t my-image .
+  - docker tag my-image registry.gitlab.com/fpilee/ci-test:v0.2
+  - docker push registry.gitlab.com/fpilee/ci-test:v0.2
+
 test:
   stage: test
   script:
