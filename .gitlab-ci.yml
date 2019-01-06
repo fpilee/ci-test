@@ -8,6 +8,7 @@ cache:
   - vendor/
 
 stages:
+  - build
   - test
 
 # Run our tests
