@@ -27,6 +27,9 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Copy the current directory contents into the container at /app
-COPY . /app
+COPY composer.json /usr/src/app
+COPY composer.lock /usr/src/app
 
 RUN composer install
+
+COPY . /usr/src/app
