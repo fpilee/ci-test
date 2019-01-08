@@ -1,5 +1,2 @@
 sut:
-  build: .
-  command:
-    - WORKDIR /usr/src/app
-    - vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
+  command: vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
