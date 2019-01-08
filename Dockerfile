@@ -25,11 +25,11 @@ RUN useradd -ms /bin/bash felipe
 
 USER felipe
 
-RUN mkdir -p app/
+RUN mkdir -p /home/felipe/app/
 
-COPY --chown=felipe . app/
+COPY --chown=felipe . /home/felipe/app/
 
-WORKDIR app
+WORKDIR /home/felipe/app/
 
 RUN composer install
 
