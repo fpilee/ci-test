@@ -1,2 +1,3 @@
 sut:
+  image: fpilee/ci-test:latest
   command: vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
