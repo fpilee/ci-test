@@ -21,11 +21,15 @@ RUN docker-php-ext-enable xdebug
 
 RUN curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN mkdir -p /usr/src/app
+RUN useradd -ms /bin/bash felipe
 
-COPY . /usr/src/app
+USER felipe
 
-WORKDIR /usr/src/app
+RUN mkdir -p app/
+
+COPY --chown=felipe . app/
+
+WORKDIR app
 
 RUN composer install
 
